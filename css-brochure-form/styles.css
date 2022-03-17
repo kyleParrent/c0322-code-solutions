@@ -26,7 +26,7 @@ label {
 input.main {
   width: 100%;
   border-radius: 6px;
-  border: 1px solid rgb(170 170 170);
+  border: 1px solid rgb(210 210 210);
   padding: 10px 0 10px 10px;
   margin-bottom: 12px;
   font-size: 16px;
@@ -37,7 +37,7 @@ input.main {
 select {
   width: 100%;
   border-radius: 6px;
-  border: 1px solid rgb(170 170 170);
+  border: 1px solid rgb(210 210 210);
   padding: 10px 0;
   font-size: 12px;
   font-weight: bold;
