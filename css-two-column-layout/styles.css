@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-family: Karla, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+}
+
+h5 {
+  font-family: Karla, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  padding: 0 5px;
+}
+
+p {
+  font-family: Karla, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+button {
+  font-family: Karla, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: lightcoral;
+  background-color: white;
+  border: 2px solid lightcoral;
+  padding: 8px 38px;
+  margin-top: 16px;
+}
+
+.container {
+  max-width: 850px;
+  margin: 50px auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-half {
+  flex-basis: calc(100% / 2);
+}
+
+.col-fourth {
+  flex-basis: calc(100% / 4);
+}
+
+.col-three-fourth {
+  flex-basis: calc(300% / 4);
+}
+
+.pad {
+  padding-top: 26px;
+}
+
+.left-pad {
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+
+.right-pad {
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.big-pad {
+  padding: 0 125px;
+}
+
+.little-pad {
+  padding-top: 10px;
+}
