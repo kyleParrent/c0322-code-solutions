@@ -20,7 +20,7 @@ body {
   flex-basis: 100%;
 }
 
-.column-third {
+.col-third {
   flex-basis: calc(100% / 3);
 }
 
