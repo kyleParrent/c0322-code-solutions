@@ -42,7 +42,8 @@ button {
 }
 
 .container {
-  margin: 50px 100px;
+  max-width: 850px;
+  margin: 50px auto;
 }
 
 .center {
