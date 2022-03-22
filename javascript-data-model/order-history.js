@@ -1,6 +1,6 @@
 var orderHistory = [
   {
-    item1: {
+    items: [{
       name: 'Javascript for Impatient programmers',
       picture: URL,
       author: 'Rauschmayer, Dr. Axel',
@@ -13,10 +13,10 @@ var orderHistory = [
       total: 34.00,
       shippedTo: 'JS Masher',
       orderNum: '114-3941689-8772232'
-    }
+    }]
   },
   {
-    item1: {
+    items: [{
       name: 'The Timeless Way of Building',
       picture: URL,
       author: 'Alexander Christopher',
@@ -29,10 +29,10 @@ var orderHistory = [
       total: 44.53,
       shippedTo: 'JS Masher',
       orderNum: '113-9984268-1280257'
-    }
+    }]
   },
   {
-    item1: {
+    items: [{
       name: 'Gamecube Controller Adapter. Super Smash Bros Switch Gamecube Adapter for Wii U, PC. Support Turbo and Vibration Features. No Drvier and No Lag-Gamecube Adapter',
       picture: URL,
       author: null,
@@ -45,10 +45,10 @@ var orderHistory = [
       total: 17.22,
       shippedTo: 'JS Masher',
       orderNum: '114-2875557-9059409'
-    }
+    }]
   },
   {
-    item1: {
+    items: [{
       name: 'Gamecube Conroller - Super Smash Bros. Edition (Nintendo Switch)',
       picture: URL,
       author: null,
@@ -61,8 +61,7 @@ var orderHistory = [
       total: 138.93,
       shippedTo: 'JS Masher',
       orderNum: '113-2883177-2648248'
-    },
-    item2: {
+    }, {
       name: 'The Art of SQL',
       picture: URL,
       author: 'Faroult, Stephane',
@@ -75,10 +74,8 @@ var orderHistory = [
       total: 138.93,
       shippedTo: 'JS Masher',
       orderNum: '113-2883177-2648248'
-    }
+    }]
   }
 ];
 
-console.log('order 4 item 2 author: ', orderHistory[3].item2.author);
-console.log(orderHistory[3].item1.author);
-console.log(orderHistory[0].item1.name);
+console.log('order 4 item 2 author: ', orderHistory[3].items[1].author);
