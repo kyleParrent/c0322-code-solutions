@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Barlow, sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: Barlow, sans-serif;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 14px;
+  font-family: Barlow, sans-serif;
+  font-weight: 800;
+}
+
+.image {
+  max-width: 250px;
+  height: auto;
+}
+
+.image-small {
+  width: 50px;
+  height: auto;
+}
+
+.container {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-fourth {
+  flex-basis: 25%;
+}
+
+.center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.phone-pad {
+  margin: 0 10px;
+}
+
+.p-pad {
+  margin-top: 30px;
+}
