@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-fifth {
+  flex-basis: 20%;
+}
+
+.image {
+  object-fit: contain;
+  max-width: 200px;
+  height: auto;
+}
+
+.inline {
+  display: inline;
+}
