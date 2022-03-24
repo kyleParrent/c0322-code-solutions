@@ -67,3 +67,9 @@ span {
 .grey {
   color: lightgrey;
 }
+
+.radius {
+  background-color: rgb(248 239 227);
+  border-radius: calc(100% / 6);
+  padding: 1px;
+}
