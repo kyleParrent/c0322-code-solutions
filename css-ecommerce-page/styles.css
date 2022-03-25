@@ -17,8 +17,11 @@ h2 {
   margin: 0;
 }
 
-span {
+span.t-pad-bottom {
   text-decoration: line-through;
+  padding-left: 2px;
+  margin-left: 2px;
+  line-height: 25px;
 }
 
 .container {
@@ -45,19 +48,10 @@ span {
   height: 250px;
 }
 
-.inline {
-  display: flex;
-}
-
 .t-pad {
   padding-left: 4px;
   margin-left: 4px;
   border-left: 1px solid rgb(235 235 235);
-}
-
-.t-pad-bottom {
-  padding-left: 2px;
-  margin-left: 2px;
 }
 
 .bold {
