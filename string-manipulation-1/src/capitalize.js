@@ -4,11 +4,7 @@ function capitalize(word) {
   var newW = '';
   newW += word[0].toUpperCase();
   for (var i = 1; i < word.length; i++) {
-    if (word[i].toUpperCase() === word[i]) {
-      newW += word[i].toLowerCase();
-    } else {
-      newW += word[i];
-    }
+    newW += word[i].toLowerCase();
   }
   return newW;
 }

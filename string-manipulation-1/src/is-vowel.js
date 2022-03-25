@@ -1,15 +1,16 @@
 /* exported isVowel */
 
 function isVowel(char) {
-  if (char === 'a' || char === 'A') {
+  char = char.toUpperCase();
+  if (char === 'A') {
     return true;
-  } else if (char === 'e' || char === 'E') {
+  } else if (char === 'E') {
     return true;
-  } else if (char === 'o' || char === 'O') {
+  } else if (char === 'O') {
     return true;
-  } else if (char === 'u' || char === 'U') {
+  } else if (char === 'U') {
     return true;
-  } else if (char === 'i' || char === 'I') {
+  } else if (char === 'I') {
     return true;
   } else {
     return false;
