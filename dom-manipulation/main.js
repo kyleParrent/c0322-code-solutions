@@ -4,11 +4,6 @@ var count = document.querySelector('.click-count');
 
 function clicking(event) {
   clicks++;
-}
-
-hotB.addEventListener('click', clicking);
-
-function text(event) {
   var newT = 'Clicks: ' + clicks;
   count.textContent = newT;
   if (clicks < 4) {
@@ -26,4 +21,4 @@ function text(event) {
   }
 }
 
-hotB.addEventListener('click', text);
+hotB.addEventListener('click', clicking);
