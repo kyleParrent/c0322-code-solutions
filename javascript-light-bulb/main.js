@@ -1,19 +1,20 @@
 
-var clicks = 0;
+var click = false;
 var light = document.querySelector('.light');
 var back = document.querySelector('.container');
 var all = document.querySelector('body');
 
 function lightSwitch(event) {
-  clicks++;
-  if ((clicks % 2) === 0) {
+  if (click === true) {
     light.className = 'light-off';
     all.className = 'black';
     back.className = 'container-black';
+    click = false;
   } else {
     light.className = 'light';
     all.className = 'white';
     back.className = 'container';
+    click = true;
   }
 }
 
