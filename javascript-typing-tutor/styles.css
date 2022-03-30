@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-family: "Patua One", cursive, sans-serif;
+  text-align: center;
+  font-size: 38px;
+  white-space: pre;
+}
+
+a {
+  font-family: "Patua One", cursive, sans-serif;
+  font-size: 38px;
+  white-space: pre;
+}
+
+span {
+  padding-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  margin: 300px auto;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.normal {
+  color: black;
+  border-bottom: 4px solid black;
+}
+
+.correct {
+  color: greenyellow;
+}
+
+.wrong {
+  color: red;
+  border-bottom: 4px solid black;
+}
+
+.center {
+  text-align: center;
+}
