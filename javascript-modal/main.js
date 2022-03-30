@@ -1,22 +1,20 @@
-var click = false;
+
 var overL = document.querySelector('.overlay');
 var pop = document.querySelector('.pop');
 var openB = document.querySelector('.open-button');
 var closeB = document.querySelector('.close-button');
 
-function popUp(event) {
-  if (click === false) {
-    overL.className = 'overlay';
-    pop.className = 'pop';
-    openB.className = 'open-button';
-    click = true;
-  } else {
-    overL.className = 'overlay-on';
-    pop.className = 'pop-on';
-    openB.className = 'open-button-off';
-    click = false;
-  }
+function popClose(event) {
+  overL.className = 'overlay';
+  pop.className = 'pop';
+  openB.className = 'open-button';
 }
 
-closeB.addEventListener('click', popUp);
+function popUp(event) {
+  overL.className = 'overlay-on';
+  pop.className = 'pop-on';
+  openB.className = 'open-button-off';
+}
+
+closeB.addEventListener('click', popClose);
 openB.addEventListener('click', popUp);
