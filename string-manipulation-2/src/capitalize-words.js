@@ -10,7 +10,8 @@ function capitalizeWords(string) {
     for (var i = 1; i < newWord.length; i++) {
       newString += newWord[i].toLowerCase();
     }
-    for (var o = 1; o < newS.length; o++) {
+    var last = newS.length - 1;
+    if (newWord !== newS[last]) {
       newString += ' ';
     }
   }
