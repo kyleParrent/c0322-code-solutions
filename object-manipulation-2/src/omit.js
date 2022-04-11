@@ -2,10 +2,13 @@
 
 function omit(source, keys) {
   var newObj = {};
-  for (var i = 0; i < keys.length; i++) {
-    for (var x in source) {
-      if (x !== keys[i]) {
-        newObj[x] = source[x];
+  for (var x in source) {
+    newObj[x] = source[x];
+    for (var i = 0; i < keys.length; i++) {
+      for (var t in newObj) {
+        if (t === keys[i]) {
+          delete newObj[t];
+        }
       }
     }
   }
