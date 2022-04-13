@@ -14,30 +14,14 @@ function isAnagram(firstString, secondString) {
       newSecondString += secondString[s];
     }
   }
-  var indexUsed = [];
-  var newCompare = '';
-  for (var i = 0; i < newFirstString.length; i++) {
-    for (var y = 0; y < newSecondString.length; y++) {
-      if (newFirstString[i] === newSecondString[y]) {
-        newCompare += newSecondString[y];
-        for (var ind = 0; ind < indexUsed.length; ind++) {
-          if (y === indexUsed[ind]) {
-            isTrue = false;
-            return isTrue;
-          } else {
-            indexUsed.push(y);
-          }
-        }
+  var firstS = newFirstString.split('');
+  var secondS = newSecondString.split('');
+  for (var i = 0; i < firstS.length; i++) {
+    for (var y = 0; y < secondS.length; y++) {
+      if (firstS[i] === secondS[y]) {
+        secondS.splice(y, 1);
       }
     }
-  }
-  if (newFirstString === newCompare) {
-    isTrue = true;
-  } else {
-    isTrue = false;
-  }
-  if (newFirstString.length !== newSecondString.length) {
-    isTrue = false;
   }
   return isTrue;
 }
