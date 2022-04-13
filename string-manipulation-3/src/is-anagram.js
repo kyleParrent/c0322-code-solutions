@@ -20,8 +20,14 @@ function isAnagram(firstString, secondString) {
     for (var y = 0; y < secondS.length; y++) {
       if (firstS[i] === secondS[y]) {
         secondS.splice(y, 1);
+        break;
       }
     }
+  }
+  if (secondS.length === 0) {
+    isTrue = true;
+  } else {
+    isTrue = false;
   }
   return isTrue;
 }
