@@ -1,16 +1,15 @@
 var count = document.querySelector('.countdown-display');
 
-function countFunction() {
-  if (count.textContent === '4') {
-    count.textContent = '3';
-  } else if (count.textContent === '3') {
-    count.textContent = '2';
-  } else if (count.textContent === '2') {
-    count.textContent = '1';
-  } else if (count.textContent === '1') {
+function countDOWN() {
+  if (count.textContent === '1') {
     count.textContent = '~Earth Beeeelooowww Us~';
     clearInterval(intID);
+  } else {
+    var countContent = count.textContent;
+    var content = parseInt(countContent);
+    var newContent = content - 1;
+    count.textContent = newContent;
   }
 }
 
-var intID = setInterval(countFunction, 1000);
+var intID = setInterval(countDOWN, 1000);
