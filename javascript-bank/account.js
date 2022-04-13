@@ -28,13 +28,11 @@ Account.prototype.withdraw = function (amount) {
 
 Account.prototype.getBalance = function () {
   var balance = 0;
-  if (this.transactions !== []) {
-    for (var i = 0; i < this.transactions.length; i++) {
-      if (this.transactions[i].type === 'deposit') {
-        balance += this.transactions[i].amount;
-      } else if (this.transactions[i].type === 'withdrawal') {
-        balance = balance - this.transactions[i].amount;
-      }
+  for (var i = 0; i < this.transactions.length; i++) {
+    if (this.transactions[i].type === 'deposit') {
+      balance += this.transactions[i].amount;
+    } else if (this.transactions[i].type === 'withdrawal') {
+      balance = balance - this.transactions[i].amount;
     }
   }
   return balance;
