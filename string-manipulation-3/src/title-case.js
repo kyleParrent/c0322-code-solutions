@@ -17,7 +17,7 @@ function titleCase(title) {
         startTitle = false;
       } else if (y === 0) {
         newWord += lowerCased[y].toUpperCase();
-      } else if (y - 1 === '-') {
+      } else if (lowerCased[y - 1] === '-') {
         newWord += lowerCased[y].toUpperCase();
       } else {
         newWord += lowerCased[y].toLowerCase();
