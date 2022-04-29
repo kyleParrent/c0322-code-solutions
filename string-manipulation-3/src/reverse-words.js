@@ -17,3 +17,16 @@ function reverseWords(string) {
   }
   return newStr;
 }
+
+// input 'hello there'
+// output: 'olleh ereht'
+
+// split the string into a new array
+// set an empty string for the new words to be arranged
+// create a for loop that goes over the spit array
+// create a new varible for the word in the array
+// create another for loop that goes over the first index in the array backwards
+// create a varible to hold the old word and push the last index first into the new word
+// create an if staement that checks if the current word is the last index
+// if it isnt then add a space to the end and push it to the new string else just push it to the new string
+// return the new string from the function
