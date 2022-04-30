@@ -71,11 +71,11 @@ for (var i = 0; i < players.length; i++) {
 
 var currentWinner = '';
 var winnerTotal = 0;
-var total = 0;
 
 for (var y = 0; y < players.length; y++) {
   var currentPlayer = players[y];
   var currentHand = currentPlayer.hand;
+  var total = 0;
   for (var u = 0; u < currentHand.length; u++) {
     var currentCard = currentHand[u];
     for (var x in currentCard) {
@@ -106,11 +106,11 @@ for (var y = 0; y < players.length; y++) {
       } else if (currentCard[x] === '2') {
         total += 2;
       }
-      if (total > winnerTotal) {
-        winnerTotal = total;
-        currentWinner = currentPlayer.name;
-      }
     }
+  }
+  if (total > winnerTotal) {
+    winnerTotal = total;
+    currentWinner = currentPlayer.name;
   }
 }
 
