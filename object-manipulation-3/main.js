@@ -7,60 +7,20 @@ var players = [
   { name: 'Droid', hand: [] }
 ];
 
-var cards = [
-  { rank: 'Ace', suit: 'Diamonds' },
-  { rank: 'Ace', suit: 'Hearts' },
-  { rank: 'Ace', suit: 'Clubs' },
-  { rank: 'Ace', suit: 'Spades' },
-  { rank: 'King', suit: 'Diamonds' },
-  { rank: 'King', suit: 'Hearts' },
-  { rank: 'King', suit: 'Clubs' },
-  { rank: 'King', suit: 'Spades' },
-  { rank: 'Queen', suit: 'Diamonds' },
-  { rank: 'Queen', suit: 'Hearts' },
-  { rank: 'Queen', suit: 'Clubs' },
-  { rank: 'Queen', suit: 'Spades' },
-  { rank: 'Jack', suit: 'Diamonds' },
-  { rank: 'Jack', suit: 'Hearts' },
-  { rank: 'Jack', suit: 'Clubs' },
-  { rank: 'Jack', suit: 'Spades' },
-  { rank: '10', suit: 'Diamonds' },
-  { rank: '10', suit: 'Hearts' },
-  { rank: '10', suit: 'Clubs' },
-  { rank: '10', suit: 'Spades' },
-  { rank: '9', suit: 'Diamonds' },
-  { rank: '9', suit: 'Hearts' },
-  { rank: '9', suit: 'Clubs' },
-  { rank: '9', suit: 'Spades' },
-  { rank: '8', suit: 'Diamonds' },
-  { rank: '8', suit: 'Hearts' },
-  { rank: '8', suit: 'Clubs' },
-  { rank: '8', suit: 'Spades' },
-  { rank: '7', suit: 'Diamonds' },
-  { rank: '7', suit: 'Hearts' },
-  { rank: '7', suit: 'Clubs' },
-  { rank: '7', suit: 'Spades' },
-  { rank: '6', suit: 'Diamonds' },
-  { rank: '6', suit: 'Hearts' },
-  { rank: '6', suit: 'Clubs' },
-  { rank: '6', suit: 'Spades' },
-  { rank: '5', suit: 'Diamonds' },
-  { rank: '5', suit: 'Hearts' },
-  { rank: '5', suit: 'Clubs' },
-  { rank: '5', suit: 'Spades' },
-  { rank: '4', suit: 'Diamonds' },
-  { rank: '4', suit: 'Hearts' },
-  { rank: '4', suit: 'Clubs' },
-  { rank: '4', suit: 'Spades' },
-  { rank: '3', suit: 'Diamonds' },
-  { rank: '3', suit: 'Hearts' },
-  { rank: '3', suit: 'Clubs' },
-  { rank: '3', suit: 'Spades' },
-  { rank: '2', suit: 'Diamonds' },
-  { rank: '2', suit: 'Hearts' },
-  { rank: '2', suit: 'Clubs' },
-  { rank: '2', suit: 'Spades' }
-];
+var cards = [];
+var rankCard = ['Ace', 'King', 'Queen', 'Jack', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
+var suitCard = ['Diamond', 'Club', 'Spade', 'Heart'];
+
+for (var f = 0; f < rankCard.length; f++) {
+  var newObj = {};
+  for (var g = 0; g < suitCard.length; g++) {
+    newObj.rank = rankCard[f];
+    newObj.suit = suitCard[g];
+    cards.push(newObj);
+    newObj = {};
+  }
+
+}
 
 var shuffCards = _.shuffle(cards);
 
