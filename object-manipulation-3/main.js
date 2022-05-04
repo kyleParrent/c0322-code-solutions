@@ -17,6 +17,7 @@ for (var f = 0; f < rankCard.length; f++) {
     newObj.rank = rankCard[f];
     newObj.suit = suitCard[g];
     cards.push(newObj);
+    newObj = {};
   }
 
 }
