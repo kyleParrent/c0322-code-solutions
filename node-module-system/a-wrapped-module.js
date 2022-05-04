@@ -1,0 +1,10 @@
+console.log('The typeof exports: ', typeof exports);
+console.log(exports);
+console.log('The typeof require: ', typeof require);
+console.log(require);
+console.log('The typeof module: ', typeof module);
+console.log(module);
+console.log('The typeof filename: ', typeof __filename);
+console.log(__filename);
+console.log('The typeof dirname: ', typeof __dirname);
+console.log(__dirname);
