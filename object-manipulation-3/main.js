@@ -8,7 +8,7 @@ var players = [
 ];
 
 var cards = [];
-var rankCard = ['Ace', 'King', 'Queen', 'Jack', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
+var rankCard = ['Ace', 'King', 'Queen', 'Jack', 10, 9, 8, 7, 6, 5, 4, 3, 2];
 var suitCard = ['Diamond', 'Club', 'Spade', 'Heart'];
 
 for (var f = 0; f < rankCard.length; f++) {
@@ -38,34 +38,16 @@ for (var y = 0; y < players.length; y++) {
   var total = 0;
   for (var u = 0; u < currentHand.length; u++) {
     var currentCard = currentHand[u];
-    for (var x in currentCard) {
-      if (currentCard[x] === 'Ace') {
-        total += 11;
-      } else if (currentCard[x] === 'King') {
-        total += 10;
-      } else if (currentCard[x] === 'Queen') {
-        total += 10;
-      } else if (currentCard[x] === 'Jack') {
-        total += 10;
-      } else if (currentCard[x] === '10') {
-        total += 10;
-      } else if (currentCard[x] === '9') {
-        total += 9;
-      } else if (currentCard[x] === '8') {
-        total += 8;
-      } else if (currentCard[x] === '7') {
-        total += 7;
-      } else if (currentCard[x] === '6') {
-        total += 6;
-      } else if (currentCard[x] === '5') {
-        total += 5;
-      } else if (currentCard[x] === '4') {
-        total += 4;
-      } else if (currentCard[x] === '3') {
-        total += 3;
-      } else if (currentCard[x] === '2') {
-        total += 2;
-      }
+    if (currentCard.rank === 'Ace') {
+      total += 11;
+    } else if (currentCard.rank === 'King') {
+      total += 10;
+    } else if (currentCard.rank === 'Queen') {
+      total += 10;
+    } else if (currentCard.rank === 'Jack') {
+      total += 10;
+    } else {
+      total += currentCard.rank;
     }
   }
   if (total > winnerTotal) {
