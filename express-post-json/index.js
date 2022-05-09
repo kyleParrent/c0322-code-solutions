@@ -7,7 +7,11 @@ let nextId = 1;
 const grades = {};
 
 app.get('/api/grades', (req, res) => {
-  res.json(grades);
+  const gradesArr = [];
+  for (const id in grades) {
+    gradesArr.push(grades[id]);
+  }
+  res.json(gradesArr);
 });
 
 app.listen(3000, () => {
