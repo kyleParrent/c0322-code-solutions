@@ -15,7 +15,7 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Server is watching!');
+  process.stdout.write('Server is watching!');
 });
 
 const expressJson = express.json();
@@ -26,5 +26,5 @@ app.post('/api/grades', (req, res) => {
   grades[nextId] = req.body;
   grades[nextId].id = nextId;
   nextId++;
-  res.send('It worked?');
+  res.send(grades);
 });
