@@ -25,8 +25,8 @@ app.get('/api/grades/', (req, res, next) => {
   db
     .query(sql)
     .then(result => {
-      const grades = result.rows;
-      res.json(grades);
+      const grade = result.rows;
+      res.json(grade);
     })
     .catch(err => {
       console.error(err);
@@ -37,23 +37,23 @@ app.get('/api/grades/', (req, res, next) => {
 });
 
 app.post('/api/grades/', (req, res, next) => {
-  const newGrades = req.body;
-  if (!newGrades.name) {
+  const newGrade = req.body;
+  if (!newGrade.name) {
     res.status(400).json({
       error: 'request must contain a name'
     });
     return;
-  } else if (!newGrades.course) {
+  } else if (!newGrade.course) {
     res.status(400).json({
       error: 'request must contain a course'
     });
     return;
-  } else if (!newGrades.score) {
+  } else if (!newGrade.score) {
     res.status(400).json({
       error: 'request must contain a score'
     });
     return;
-  } else if (newGrades.score > 100 || newGrades.score < 0) {
+  } else if (newGrade.score > 100 || newGrade.score < 0) {
     res.status(400).json({
       error: 'request score must be between 0 and 100'
     });
@@ -64,12 +64,12 @@ app.post('/api/grades/', (req, res, next) => {
       values ($1, $2, $3)
       returning * ;
   `;
-  const params = [newGrades.name, newGrades.course, newGrades.score];
+  const params = [newGrade.name, newGrade.course, newGrade.score];
   db
     .query(sql, params)
     .then(result => {
-      const grades = result.rows[0];
-      res.json(grades);
+      const grade = result.rows[0];
+      res.status(201).json(grade);
     })
     .catch(err => {
       console.error(err);
@@ -80,19 +80,19 @@ app.post('/api/grades/', (req, res, next) => {
 });
 
 app.put('/api/grades/:gradeId', (req, res, next) => {
-  const newGrades = req.body;
+  const newGrade = req.body;
   const theGradeId = Number(req.params.gradeId);
-  if (!newGrades.name) {
+  if (!newGrade.name) {
     res.status(400).json({
       error: 'request must contain a name'
     });
     return;
-  } else if (!newGrades.course) {
+  } else if (!newGrade.course) {
     res.status(400).json({
       error: 'request must contain a course'
     });
     return;
-  } else if (!newGrades.score) {
+  } else if (!newGrade.score) {
     res.status(400).json({
       error: 'request must contain a score'
     });
@@ -111,17 +111,17 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
     where   "gradeId" = $4
     returning * ;
   `;
-  const params = [newGrades.name, newGrades.course, newGrades.score, theGradeId];
+  const params = [newGrade.name, newGrade.course, newGrade.score, theGradeId];
   db
     .query(sql, params)
     .then(result => {
-      const grades = result.rows[0];
-      if (!grades) {
+      const grade = result.rows[0];
+      if (!grade) {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${theGradeId}`
         });
       } else {
-        res.json(grades);
+        res.json(grade);
       }
     })
     .catch(err => {
@@ -149,13 +149,13 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
   db
     .query(sql, params)
     .then(result => {
-      const grades = result.rows[0];
-      if (!grades) {
+      const grade = result.rows[0];
+      if (!grade) {
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${theGradeId}`
         });
       } else {
-        res.json(grades);
+        res.sendStatus(204);
       }
     })
     .catch(err => {
