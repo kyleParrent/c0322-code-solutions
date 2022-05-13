@@ -23,21 +23,16 @@ console.log('This is the sum of all values: ', sum);
 const product = numbers.reduce((previousValue, currentValue) => previousValue * currentValue);
 console.log('This is the product of all values: ', product);
 
+const initialValue = 0;
 const balance = account.reduce((previousValue, currentValue) => {
-  let previousAmount;
-  if (previousValue.amount === undefined) {
-    previousAmount = previousValue;
-  } else {
-    previousAmount = previousValue.amount;
-  }
   if (currentValue.type === 'deposit') {
-    previousAmount += currentValue.amount;
-    return previousAmount;
+    previousValue += currentValue.amount;
+    return previousValue;
   } else {
-    previousAmount -= currentValue.amount;
-    return previousAmount;
+    previousValue -= currentValue.amount;
+    return previousValue;
   }
-});
+}, initialValue);
 
 console.log('This is the balance of all accounts: ', balance);
 
