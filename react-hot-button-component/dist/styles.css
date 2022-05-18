@@ -1,0 +1,31 @@
+.purple {
+  background-color: rgb(74 0 109);
+}
+
+.light-purple {
+  background-color: rgb(127 71 153);
+}
+
+.red {
+  background-color: rgb(255 85 55);
+}
+
+.orange {
+  background-color: rgb(255 197 89);
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.white {
+  background-color: white;
+}
+
+.white-t {
+  color: white;
+}
+
+.black-t {
+  color: black;
+}
