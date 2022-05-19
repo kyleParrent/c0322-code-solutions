@@ -5,6 +5,7 @@ export default class Stopwatch extends React.Component {
     super(props);
     this.state = { isClicked: false, currentSec: 0 };
     this.handleClick = this.handleClick.bind(this);
+    this.handleReset = this.handleReset.bind(this);
     this.tick = this.tick.bind(this);
   }
 
@@ -25,6 +26,10 @@ export default class Stopwatch extends React.Component {
     this.setState({ currentSec: this.state.currentSec + 1 });
   }
 
+  handleReset() {
+    this.setState({ currentSec: 0 });
+  }
+
   render() {
     const click = this.state.isClicked;
     let theWatch;
@@ -40,7 +45,7 @@ export default class Stopwatch extends React.Component {
     } else {
       theWatch = (
         <div>
-          <div className='circle'>
+          <div className='circle' onClick={this.handleReset}>
             <div className='font'>{this.state.currentSec}</div>
           </div>
           <div className='button-box font'><div><i onClick={this.handleClick} className='fas fa-play'></i></div></div>
