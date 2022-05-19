@@ -17,25 +17,30 @@ export default class AppDrawer extends React.Component {
 
   render() {
     const click = this.state.isClicked;
-    let page;
+    let sideBar;
+    let overlay;
     if (click) {
-      page = (
-        <div onClick={this.handleClick} className='overlay'>
-            <div className='side-bar'>
-              <h2>Menu</h2>
-              <div>About</div>
-              <div>Get Started</div>
-              <div>Sign In</div>
-            </div>
-          </div>
-      );
+      sideBar = 'side-bar open';
+      overlay = 'overlay show';
     } else {
-      page = (
-          <div onClick={this.handleClick}>
-          <i className='fa-solid fa-bars'></i>
-          </div>
-      );
+      sideBar = 'side-bar';
+      overlay = 'overlay';
     }
+    const page = (
+      <div>
+        <div onClick={this.handleClick}>
+          <i className='fa-solid fa-bars'></i>
+        </div>
+        <div onClick={this.handleClick} className= {overlay}>
+        </div>
+        <div className= {sideBar}>
+          <h2>Menu</h2>
+          <div>About</div>
+          <div>Get Started</div>
+          <div>Sign In</div>
+        </div>
+      </div>
+    );
     return (
       page
     );
