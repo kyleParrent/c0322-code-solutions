@@ -1,0 +1,21 @@
+.circle {
+  width: 200px;
+  height: 200px;
+  border: 4px solid black;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-box {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.font {
+  font-size: 50px;
+}
