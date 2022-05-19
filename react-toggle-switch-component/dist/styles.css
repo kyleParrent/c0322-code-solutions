@@ -1,0 +1,44 @@
+.switch-box {
+  height: 100px;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.on {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.off {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 50px;
+  float: right;
+}
+
+.green {
+  background-color: rgb(96 151 96);
+}
+
+.gray {
+  background-color: gray;
+}
+
+.white {
+  background-color: white;
+}
+
+.full-box {
+  display: flex;
+}
+
+.text-box {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
