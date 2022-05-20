@@ -1,0 +1,13 @@
+.fa-solid.fa-xmark {
+  color: red;
+  padding-left: 10px;
+}
+
+.fa-solid.fa-check {
+  color: green;
+  padding-left: 10px;
+}
+
+.message {
+  color: red;
+}
