@@ -1,0 +1,27 @@
+ul {
+  list-style: none;
+}
+
+li {
+  width: 500px;
+}
+
+.header {
+  background-color: gray;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.header:hover {
+  background-color: lightgray;
+}
+
+.info {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.hidden {
+  display: none;
+}
