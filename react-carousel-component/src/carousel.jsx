@@ -12,7 +12,7 @@ export default class Carousel extends React.Component {
   }
 
   handleClickIcon(event) {
-    const index = event.target.getAttribute('key');
+    const index = event.target.getAttribute('data-index');
     this.setState({ currentIndex: index });
   }
 
@@ -58,7 +58,7 @@ export default class Carousel extends React.Component {
                 iconType = 'far fa-circle icon';
               }
               return (
-                <i onClick={this.handleClickIcon} key={index} className={iconType}></i>
+                <i onClick={this.handleClickIcon} data-index={index} key={index} className={iconType}></i>
               );
             }
             )
