@@ -4,16 +4,37 @@ export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIndex: 0
+      currentIndex: 0,
+      intId: null
     };
     this.handleClickIcon = this.handleClickIcon.bind(this);
     this.handleClickArrowBack = this.handleClickArrowBack.bind(this);
     this.handleClickArrowFoward = this.handleClickArrowFoward.bind(this);
   }
 
+  componentDidMount() {
+    const intId = setInterval(() => {
+      if (this.state.currentIndex < this.props.images.length - 1) {
+        this.setState({ currentIndex: this.state.currentIndex + 1 });
+      } else {
+        this.setState({ currentIndex: 0 });
+      }
+    }, 3000);
+    this.setState({ intId: intId });
+  }
+
   handleClickIcon(event) {
     const index = event.target.getAttribute('data-index');
     this.setState({ currentIndex: index });
+    clearInterval(this.state.intId);
+    const intId = setInterval(() => {
+      if (this.state.currentIndex < this.props.images.length - 1) {
+        this.setState({ currentIndex: this.state.currentIndex + 1 });
+      } else {
+        this.setState({ currentIndex: 0 });
+      }
+    }, 3000);
+    this.setState({ intId: intId });
   }
 
   handleClickArrowFoward(event) {
@@ -22,6 +43,15 @@ export default class Carousel extends React.Component {
     } else {
       this.setState({ currentIndex: 0 });
     }
+    clearInterval(this.state.intId);
+    const intId = setInterval(() => {
+      if (this.state.currentIndex < this.props.images.length - 1) {
+        this.setState({ currentIndex: this.state.currentIndex + 1 });
+      } else {
+        this.setState({ currentIndex: 0 });
+      }
+    }, 3000);
+    this.setState({ intId: intId });
   }
 
   handleClickArrowBack(event) {
@@ -30,6 +60,15 @@ export default class Carousel extends React.Component {
     } else {
       this.setState({ currentIndex: this.props.images.length - 1 });
     }
+    clearInterval(this.state.intId);
+    const intId = setInterval(() => {
+      if (this.state.currentIndex < this.props.images.length - 1) {
+        this.setState({ currentIndex: this.state.currentIndex + 1 });
+      } else {
+        this.setState({ currentIndex: 0 });
+      }
+    }, 3000);
+    this.setState({ intId: intId });
   }
 
   render() {
