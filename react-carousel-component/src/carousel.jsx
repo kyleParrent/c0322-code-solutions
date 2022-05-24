@@ -25,7 +25,8 @@ export default class Carousel extends React.Component {
 
   handleClickIcon(event) {
     const index = event.target.getAttribute('data-index');
-    this.setState({ currentIndex: index });
+    const parsedIndex = parseInt(index);
+    this.setState({ currentIndex: parsedIndex });
     clearInterval(this.state.intId);
     const intId = setInterval(() => {
       if (this.state.currentIndex < this.props.images.length - 1) {
@@ -35,6 +36,7 @@ export default class Carousel extends React.Component {
       }
     }, 3000);
     this.setState({ intId: intId });
+
   }
 
   handleClickArrowFoward(event) {
