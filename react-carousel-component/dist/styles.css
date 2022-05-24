@@ -1,0 +1,53 @@
+img {
+  object-fit: contain;
+}
+
+.container {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-half {
+  flex-basis: 50%;
+}
+
+.col-fourth {
+  flex-basis: 25%;
+}
+
+.col-twelve {
+  flex-basis: calc(100% / 12);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.arrow {
+  font-size: 75px;
+}
+
+.dots {
+  display: flex;
+  justify-content: space-between;
+}
