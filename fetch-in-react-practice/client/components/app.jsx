@@ -52,7 +52,7 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        const newArray = this.state.todos;
+        const newArray = this.state.todos.slice();
         const lastArray = newArray.concat(data);
         this.setState({ todos: lastArray });
       });
@@ -102,7 +102,7 @@ export default class App extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        const newArray = this.state.todos;
+        const newArray = this.state.todos.slice();
         newArray[foundIndex] = data;
         this.setState({ todos: newArray });
       });
