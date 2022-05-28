@@ -32,7 +32,7 @@ export default class App extends React.Component {
         this.setState({ caption: '' });
         this.fileInputRef.current.value = null;
       })
-      .catch(err => console.err(err));
+      .catch(err => console.error(err));
     /**
      * Prevent the browser's default behavior for form submissions.
      *
