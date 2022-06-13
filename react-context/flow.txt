@@ -1,0 +1,73 @@
+Sign up
+- When the user clicks either of the sign up buttons redered on the sign in page, it changes the route to #sign-up.
+- This re-renders the page because of the hashchange event listener on the window set by the componentDidMount method.
+- The parseRoute function takes the hash out of the route and splits it by the '?'.
+- What comes before the '?' is set to path and what comes after is set to querystring.
+- A new operator with the UrlSearchParams function is called with one argument, querystring, and thats assigned to the varible params.
+- An object containing the path and params is returned.
+- This return is assigned to the state in the route property.
+- The render takes you to renderPage mehtod whichs sees the route.path and goes to the auth.jsx where the message changes to match the route
+  and the auth-form.jsx is called in the render with props that include a key and action both containsing the route.path, and a handleSignIn method.
+- The auth form now changes some text for the button and headers, as well as sets the alternative href action containing the opposite route.path.
+- The page now renders an input for username and password as well as a alternative action link to take you back to
+  the sign in page.
+- Once the user inputs some values the handleChange method is called that sets the username and password into the state.
+- Once the form is submitted a handleSubmit method is called that uses the action to decide what fetch to do.
+- The fetch uses the sign-up route to post on the database.
+- This endpoint uses the username and password it got from auth-form, which stringifyed it's this.state to get these values.
+- The endpoint uses the argon2.hash to get the hashed password and then puts the value with the username into a sql request.
+- The query method on the database is called with the sql and params array where the result is a 201 status with the result
+  returned as the user variable.
+- In the result on the auth-form, since the current action is sign up, the hash is changed to sign in in order to re-render
+  the page for the sign in page due to the hashchange event set on the window.
+
+Sign in
+- The app now calls the auth.jsx again, since the renderPage method sees the curretn path is either "sign-up" or "sign-in",
+  which calls the auth-form.jsx putting sign-in as the route.path for the key and action props as well as once again passing the handleSignIn method.
+- The auth form now changes the alternive action route and text to sign up and register.
+- The form is rendered and when the user inputs values the handleChange method puts them in the this.state.
+- Once the forms button is clicked the handleSubmit method is called again but now the action is sign-in so it will use that
+  for the fetch request with the username and password in the body.
+- The sign-in endpoint is used which uses a select to get the userId and hashed password where the username equals the one inputted by the user.
+- Then the result is used to see if the hashedpassword and inputted password match up.
+- Since it does, it puts the userId and username in a payload varible and uses that in the jwt.sign, along with the token secret prop to
+  get the token variable.
+- The token along with the payload under the user proerty get returned.
+- In the result function block on auth form, since there is now a user and a token, the onSignIn method is called which uses the
+  handleSignIn method from app.jsx.
+- It has one argument which it the result of the fetch.
+- The method puts the token into local storage under the name 'react-context-jwt' and puts the user from the result into the user prop in
+  this.state.
+- When the page renders it sees the path is sign-in so it goes to the Auth compnent.
+- This component sees there is now a user so it goes to the Redirect component with a "to" prop equal to an empty string.
+- Redirect sees the "to" is an empty string and assigns the url.hash to equal '#'.
+- It then changes the window.location."new url", which calls the hashChange event.
+- The route.path is changed using the parseRoute helper function.
+- In the render of the app the renderPage method is called.
+- Since the current path is an empty string, the Home component is called.
+- The home component sees there is a user in context so it displays the gif again.
+
+Stay Signed In
+- The user can stay signed in because now that there is a user in the this.state, since when the componentDidMount is called again
+  it grabs the token from local storage, jwtDecodes it, and puts it in the user property of this.state, along with setting is authorizing
+  to false so the page renders.
+- In the render the auth.jsx is called and since there is a user present in context, the redirect component is called with a prop of to= an empty string.
+- In redirect, a new url is created with the window.location.
+- Since the 'to' prop is an empty string the url.hash property is set to "#".
+- Since there is a hashChange event the route is changes using the parseRoute helper function.
+- In the render of the app, the route.path is used to determine whats redered.
+- Since the current path is an empty string, the Home component is called.
+- The home component sees there is a user in context so it displays the gif again.
+
+Sign out
+- The user can sign out by clicking the sign out link in the nav bar.
+- This click calls the handleSignOut fuction from context taken from app.jsx.
+- This method removes the token from local storage and sets the state for user to equal null.
+- This renders the nav bar with the sign in and sign up buttons and re-renders the page which calls renderPage method.
+- This method sees the path is still an empty string so it calls the Home component.
+- The home compnent sees there is no user so it calls the Redirect component with a "to" prop equal to "sign-in".
+- The prop "to" is set to the url.hash and this is set to the window.location.
+- This calls the hashChange event and changes the route.path to equal sig-in.
+- This re-renders the page and call the renderPage method which calls the Auth component.
+- The auth.jsx gets the proper welcome message using the path then calls the authForm component.
+- This renders the inputs and gives the correct button text and alternative links depending on the action, which is the route.path.
